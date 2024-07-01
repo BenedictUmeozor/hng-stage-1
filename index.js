@@ -56,7 +56,11 @@ const toggleNav = () => {
 };
 
 links.forEach((link) => {
-  link.addEventListener("click", toggleNav);
+  link.addEventListener("click", () => {
+    if (window.innerWidth <= 900) {
+      toggleNav();
+    }
+  });
 });
 
 menuBar.addEventListener("click", toggleNav);
